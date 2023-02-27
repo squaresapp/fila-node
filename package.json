@@ -1,0 +1,12 @@
+{
+	"name": "fila-node",
+	"author": "Paul Gordon",
+	"description": "Node.js backend for Fila",
+	"version": "1.0.0",
+	"main": "filanode.js",
+	"scripts": {},
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^18.11.9"
+	}
+}
