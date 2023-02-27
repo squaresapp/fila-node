@@ -1,7 +1,7 @@
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
-		"outFile": "+build/filanode.js",
+		"outFile": "+build/fila-node.js",
 	},
 	"exclude": [
 		"**/+build/**/*.ts",

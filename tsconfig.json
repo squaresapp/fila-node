@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"outFile": "+build/filanode.debug.js",
+		"outFile": "+build/fila-node.debug.js",
 		"composite": true,
 		"module": "system",
 		"moduleResolution": "node",
