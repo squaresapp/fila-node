@@ -59,7 +59,8 @@ class FilaNode extends Fila
 	/** */
 	async writeDirectory()
 	{
-		await this.fs.promises.mkdir(this.path, { recursive: true });
+		if (!this.fs.existsSync(this.path))
+			await this.fs.promises.mkdir(this.path, { recursive: true });
 	}
 	
 	/**
