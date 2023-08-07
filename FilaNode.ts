@@ -2,16 +2,13 @@
 class FilaNode extends Fila
 {
 	/** */
-	private static _ = (() =>
+	static use()
 	{
-		if (typeof process !== "undefined" && process?.release?.name === "node")
-		{
-			const sep = (require("path") as typeof import("path")).sep;
-			const cwd = process.cwd();
-			const tmp = (require("os") as typeof import("os")).tmpdir();
-			Fila.setDefaults(FilaNode, sep, cwd, tmp);
-		}
-	})();
+		const sep = (require("path") as typeof import("path")).sep;
+		const cwd = process.cwd();
+		const tmp = (require("os") as typeof import("os")).tmpdir();
+		Fila.setDefaults(FilaNode, sep, cwd, tmp);
+	}
 	
 	/** */
 	private readonly fs = require("fs") as typeof import("fs");
