@@ -10,5 +10,8 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@types/node": "^18.11.9"
+	},
+	"dependencies": {
+		"chokidar": "^3.5.3"
 	}
 }

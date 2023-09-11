@@ -152,7 +152,7 @@ class FilaNode extends Fila
 			});
 		});
 		
-		return () => watcher.removeAllListeners();
+		return () => { watcher.removeAllListeners() };
 	}
 	
 	/** */
