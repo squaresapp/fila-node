@@ -39,10 +39,14 @@ class FilaNode extends Fila
 	}
 	
 	/** */
-	async writeText(text: string)
+	async writeText(text: string, options?: Fila.IWriteTextOptions)
 	{
 		await this.up().writeDirectory();
-		await this.fs.promises.writeFile(this.path, text);
+		
+		if (options?.append)
+			await this.fs.promises.appendFile(this.path, text);
+		else
+			await this.fs.promises.writeFile(this.path, text);
 	}
 	
 	/** */
@@ -108,17 +112,19 @@ class FilaNode extends Fila
 	{
 		return new Promise<void>(async resolve =>
 		{
-			if (await target.isDirectory())
+			if (await this.isDirectory())
 			{
-				throw "Copying directories is not implemented. " + target.path;
+				this.fs.cp(this.path, target.path, { recursive: true, force: true }, () => resolve());
 			}
-			
-			const dir = target.up();
-			
-			if (!await dir.exists())
-				await new Promise(r => this.fs.mkdir(dir.path, { recursive: true }, r));
-			
-			this.fs.copyFile(this.path, target.path, () => resolve());
+			else
+			{
+				const dir = target.up();
+				
+				if (!await dir.exists())
+					await new Promise(r => this.fs.mkdir(dir.path, { recursive: true }, r));
+				
+				this.fs.copyFile(this.path, target.path, () => resolve());
+			}
 		});
 	}
 	
