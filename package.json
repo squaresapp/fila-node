@@ -2,12 +2,37 @@
 	"name": "fila-node",
 	"author": "Paul Gordon",
 	"description": "Node.js backend for Fila",
-	"version": "1.0.0",
-	"main": "fila-node.js",
-	"scripts": {
-		"bundle": "tsc -p tsconfig.release.json && terser ./+build/fila-node.debug.js > ./+build/fila-node.min.js"
-	},
 	"license": "MIT",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/scrollapp/fila-node"
+	},
+	"bugs": {
+		"url": "https://github.com/scrollapp/fila-node/issues"
+	},
+	"main": "fila-node.js",
+	"browser": "fila-node.js",
+	"module": "fila-node.esm.js",
+	"types": "fila-node.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"LICENSE.txt",
+		"readme.md",
+		"fila-node.js",
+		"fila-node.min.js",
+		"fila-node.d.ts",
+		"fila-node.d.ts.map",
+		"fila-node.esm.js"
+	],
+	"scripts": {
+		"test": "exit 0",
+		"esm": "sed 's/\\/\\/+ //' ./+build/fila-node.js > ./+build/fila-node.esm.js",
+		"bundle": "tsc -p tsconfig.release.json && terser ./+build/fila-node.debug.js > ./+build/fila-node.min.js && npm run esm",
+		"release": "npm run bundle && cd ./+build && cp ../package.json ./package.json && np"
+	},
 	"devDependencies": {
 		"@types/node": "^18.11.9"
 	},
@@ -15,3 +40,4 @@
 		"chokidar": "^3.5.3"
 	}
 }
+

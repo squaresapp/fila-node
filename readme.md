@@ -1,3 +1,7 @@
 # Fila Backend For Node.JS
 
-Readme coming
+Installation:
+
+```
+npm install fila-core fila-node
+```

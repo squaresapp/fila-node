@@ -238,6 +238,17 @@ namespace FilaNode
 			}
 		}
 	}
-	
-	typeof module === "object" && Object.assign(module.exports, { FilaNode });
 }
+
+//@ts-ignore CommonJS compatibility
+typeof module === "object" && Object.assign(module.exports, { FilaNode });
+
+// ES module compatibility
+declare module "@scrollapp/fila-node"
+{
+	const __export: { FilaNode: typeof FilaNode };
+	export = __export;
+}
+
+// The comment and + prefix is removed during npm run bundle
+//+ export { FilaNode }
