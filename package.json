@@ -3,7 +3,7 @@
 	"author": "Paul Gordon",
 	"description": "Node.js backend for Fila",
 	"license": "MIT",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/scrollapp/fila-node"
@@ -31,7 +31,7 @@
 		"test": "exit 0",
 		"esm": "sed 's/\\/\\/+ //' ./+build/fila-node.js > ./+build/fila-node.esm.js",
 		"bundle": "tsc -p tsconfig.release.json && terser ./+build/fila-node.debug.js > ./+build/fila-node.min.js && npm run esm",
-		"release": "npm run bundle && cd ./+build && cp ../package.json ./package.json && np"
+		"release": "npm run bundle && cd ./+build && cp ../package.json ./package.json && np && cp ../package.json ./package.json"
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.9"
