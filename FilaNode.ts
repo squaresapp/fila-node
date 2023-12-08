@@ -3,6 +3,8 @@ namespace FilaNode
 {
 	export function use()
 	{
+		const Fila = require("fila-core").Fila;
+		
 		class FilaNode extends Fila
 		{
 			/** */
