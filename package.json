@@ -6,10 +6,10 @@
 	"version": "1.0.3",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/scrollapp/fila-node"
+		"url": "https://github.com/squaresapp/fila-node"
 	},
 	"bugs": {
-		"url": "https://github.com/scrollapp/fila-node/issues"
+		"url": "https://github.com/squaresapp/fila-node/issues"
 	},
 	"main": "fila-node.js",
 	"browser": "fila-node.js",
