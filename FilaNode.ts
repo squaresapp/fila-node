@@ -246,7 +246,7 @@ namespace FilaNode
 typeof module === "object" && Object.assign(module.exports, { FilaNode });
 
 // ES module compatibility
-declare module "@scrollapp/fila-node"
+declare module "fila-node"
 {
 	const __export: { FilaNode: typeof FilaNode };
 	export = __export;
