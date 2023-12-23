@@ -3,7 +3,7 @@
 	"author": "Paul Gordon",
 	"description": "Node.js backend for Fila",
 	"license": "MIT",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/squaresapp/fila-node"
