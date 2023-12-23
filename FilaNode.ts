@@ -78,7 +78,7 @@ namespace FilaNode
 			{
 				return new Promise<void>(r =>
 				{
-					this.fs.symlink(this.path, at.path, () =>
+					this.fs.symlink(at.path, this.path, () =>
 					{
 						r();
 					});
